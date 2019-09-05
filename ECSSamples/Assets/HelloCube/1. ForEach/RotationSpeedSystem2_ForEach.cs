@@ -16,13 +16,8 @@ public class RotationSpeedSystem2_ForEach : ComponentSystem
         // There is no update logic on the individual ComponentData.
         Entities.ForEach((ref RotationSpeed_ForEach rotationSpeed, ref Rotation rotation) =>
         {
-            float3 axis;
-            axis.x = 1;
-            axis.y = 0;
-            axis.z = 0;
             var deltaTime = Time.deltaTime;
-            rotation.Value = math.mul(math.normalize(rotation.Value),
-                quaternion.AxisAngle(axis, rotationSpeed.RadiansPerSecond * deltaTime));
+            rotation.Value = math.mul(math.normalize(rotation.Value), quaternion.AxisAngle(math.float3(0, 0, 1), rotationSpeed.RadiansPerSecond * deltaTime));
         });
     }
 }

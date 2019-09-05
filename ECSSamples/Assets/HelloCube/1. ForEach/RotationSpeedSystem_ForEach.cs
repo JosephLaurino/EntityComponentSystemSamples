@@ -18,7 +18,7 @@ public class RotationSpeedSystem_ForEach : ComponentSystem
         {
             var deltaTime = Time.deltaTime;
             rotation.Value = math.mul(math.normalize(rotation.Value),
-                quaternion.AxisAngle(math.up(), rotationSpeed.RadiansPerSecond * deltaTime));
+               quaternion.AxisAngle(math.up(), rotationSpeed.RadiansPerSecond * deltaTime));
         });
     }
 }
